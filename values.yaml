@@ -1,0 +1,4 @@
+serviceName: poc-backend-svc
+appName : poc-backend-node
+image : asadullahkhan/poc:v3
+mongoServiceName : mongo-svc

@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: poc-app-deployment
+  labels:
+    app: {{ .Values.appName }}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: {{ .Values.appName }}
+  template:
+    metadata:
+      labels:
+        app: {{ .Values.appName }}
+    spec:
+      containers:
+      - name: poc-app-backend
+        env:
+          - name: DB_URL
+            value: "mongodb://asad:asad123@{{ .Values.mongoServiceName }}/my-demo-project?retryWrites=true&w=majority"  #value: "http://localhost:32001/users"
+        image:  {{ .Values.image }}
+        ports:
+        - containerPort: 4005
