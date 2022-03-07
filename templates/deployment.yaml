@@ -18,7 +18,7 @@ spec:
       - name: poc-app-backend
         env:
           - name: DB_URL
-            value: "mongodb://asad:asad123@{{ .Values.mongoServiceName }}/my-demo-project?retryWrites=true&w=majority"  #value: "http://localhost:32001/users"
+            value: "mongodb://asad:asad123@{{ .Values.mongoServiceName }}/{{ .Values.dbName }}?retryWrites=true&w=majority"  #value: "http://localhost:32001/users"
         image:  {{ .Values.image }}
         ports:
         - containerPort: 4005

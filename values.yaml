@@ -2,3 +2,4 @@ serviceName: poc-backend-svc
 appName : poc-backend-node
 image : asadullahkhan/poc-backend:v1
 mongoServiceName : mongo-svc
+dbName: test-database
